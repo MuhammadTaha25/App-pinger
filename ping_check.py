@@ -1,9 +1,11 @@
 import requests
 import sys
 
-APP_URL = "https://your-streamlit-app-url.streamlit.app/"  # apna app URL yahan daalo
+APP_URL = "https://httpstat.us/"  # apna app URL yahan daalo
 
-SLEEP_MARKER = "yes get this app back up."  # case-insensitive check
+SLEEP_MARKER = """This page isn’t working
+httpstat.us didn’t send any data.
+ERR_EMPTY_RESPONSE"""   # case-insensitive check
 
 def main():
     try:
