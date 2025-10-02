@@ -1,17 +1,16 @@
 import requests
 import sys
 
-APP_URL = "https://httpstat.us/"  # apna app URL yahan daalo
+APP_URL = "https://muskchatbot.streamlit.app/"  # apna app URL yahan daalo
 
-SLEEP_MARKER = """This page isn’t working
-httpstat.us didn’t send any data.
-ERR_EMPTY_RESPONSE"""   # case-insensitive check
+SLEEP_MARKER = """you need to enable javascript to run this app."""   # case-insensitive check
 
 def main():
     try:
         r = requests.get(APP_URL, timeout=15)
         text = r.text.lower()
-        if SLEEP_MARKER.lower() in text:
+        phrase=text[4061:4107]
+        if SLEEP_MARKER.lower() in phrase:
             print("Website is NOT active (sleep mode).")
             sys.exit(2)
         else:
